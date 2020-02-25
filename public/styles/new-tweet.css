@@ -1,0 +1,29 @@
+.new-tweet {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.new-tweet textarea {
+  display: inline-block;
+  width: 40%;
+  border: none;
+  border-bottom: 5px solid #fcc022;
+  background-color: transparent;
+  padding: 10px 20px;
+  margin: 8px 0;
+  transition: width 0.4s ease-in-out;
+  resize: none;
+}
+.new-tweet textarea:focus {
+  outline: none;
+  width: 80%;
+}
+
+.new-tweet input[type="submit"] {
+  background-color: #9200cc;
+  color: #fff;
+  border: none;
+  text-align: left;
+  text-transform: uppercase;
+}
