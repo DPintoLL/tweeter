@@ -16,3 +16,13 @@
   font-family: "Bungee", sans-serif;
   font-size: 2em;
 }
+
+.ish {
+  position: absolute;
+  font-family: "Lacquer";
+  transform: rotate(-14deg);
+  top: 20px;
+  left: 250px;
+  color: #fcc022;
+  font-size: 1.2em;
+}

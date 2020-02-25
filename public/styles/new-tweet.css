@@ -55,7 +55,7 @@ span.counter {
   right: 200px;
 }
 
-article.tweet {
+article.tweet-card {
   display: flex;
   flex-direction: column;
   height: 250px;
@@ -63,43 +63,47 @@ article.tweet {
   text-align: center;
   margin: 30px auto;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-color: #aaacb0;
+  background-color: rgba(237, 237, 237, 0.3);
   border: 5px solid #fcc022;
 }
-article.tweet:hover {
+article.tweet-card:hover {
   box-shadow: 5px 5px 15px 5px #fcc022;
 }
 
-article.tweet header {
+article.tweet-card > * {
   position: relative;
+}
+
+article.tweet-card header {
   height: 83.3px;
   line-height: 83.3px;
   width: 95%;
   margin: 0 auto;
 }
-article.tweet header .user-img {
-  width: 5%;
+
+article.tweet-card header > * {
   position: absolute;
+  line-height: 83.3px;
+}
+article.tweet-card header .user-img {
   left: 20px;
 }
-article.tweet header .user-name {
-  position: absolute;
-  left: 20px;
+article.tweet-card header .user-name {
+  left: 80px;
 }
-article.tweet header .alias {
-  position: absolute;
+article.tweet-card header .alias {
   right: 20px;
+  color: #aaa;
 }
 
-article.tweet .tweet-body {
+article.tweet-card .tweet-body {
   position: relative;
   height: 83.3px;
-  line-height: 83.3px;
   width: 95%;
   margin: 0 auto;
 }
 
-article.tweet footer {
+article.tweet-card footer {
   position: relative;
   height: 83.3px;
   line-height: 83.3px;
@@ -107,11 +111,16 @@ article.tweet footer {
   width: 95%;
   margin: 0 auto;
 }
-article.tweet footer .days-ago {
+
+footer .icons > * {
+  margin-left: 5px;
+}
+
+article.tweet-card footer .days-ago {
   position: absolute;
   left: 20px;
 }
-article.tweet footer .icons {
+article.tweet-card footer .icons {
   position: absolute;
   right: 20px;
 }

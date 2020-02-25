@@ -18,8 +18,8 @@ html {
 
 body {
   color: #545149;
-  background-color: #aaacb0;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
