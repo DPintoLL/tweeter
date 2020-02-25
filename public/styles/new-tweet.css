@@ -1,14 +1,26 @@
 .new-tweet {
   text-align: center;
   width: 90%;
+  height: 230px;
   margin: 0 auto;
+}
+
+.form-wrapper {
+  position: relative;
+  height: 150px;
+}
+.new-tweet form {
+  height: 80%;
+  margin: auto;
 }
 
 .new-tweet textarea {
   display: inline-block;
-  width: 40%;
+  height: 100px;
+  width: 45%;
   border: none;
   border-bottom: 5px solid #fcc022;
+  text-align: center;
   background-color: transparent;
   padding: 10px 20px;
   margin: 8px 0;
@@ -28,48 +40,78 @@
   display: inline-block;
   text-align: left;
   text-transform: uppercase;
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  transition: left 0.4s ease-in-out;
+  resize: none;
 }
 
-.counter {
-  display: inline-block;
+span.counter {
+  /* display: inline-block; */
   text-align: right;
+  position: absolute;
+  top: 120px;
+  right: 200px;
 }
 
-article.tweet-container {
-  position: relative;
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
 
   text-align: center;
   margin: 30px auto;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-color: rgba(252, 192, 34, 0.5);
+  background-color: #aaacb0;
+  border: 5px solid #fcc022;
+}
+article.tweet:hover {
+  box-shadow: 5px 5px 15px 5px #fcc022;
 }
 
-article.tweet-container header {
-  margin: 0 auto;
+article.tweet header {
   position: relative;
-  height: 50px;
+  height: 83.3px;
+  line-height: 83.3px;
+  width: 95%;
+  margin: 0 auto;
 }
-
-article.tweet-container header .user-img {
+article.tweet header .user-img {
   width: 5%;
   position: absolute;
   left: 20px;
 }
-article.tweet-container header .user-nam {
+article.tweet header .user-name {
   position: absolute;
-  left: 50px;
+  left: 20px;
 }
-article.tweet-container header .alias {
+article.tweet header .alias {
   position: absolute;
   right: 20px;
 }
 
-article.tweet-container .tweet-body {
+article.tweet .tweet-body {
   position: relative;
-  height: 50px;
+  height: 83.3px;
+  line-height: 83.3px;
+  width: 95%;
+  margin: 0 auto;
 }
 
-article.tweet-container footer {
+article.tweet footer {
   position: relative;
-  height: 50px;
+  height: 83.3px;
+  line-height: 83.3px;
+  border-top: 5px solid black;
+  width: 95%;
+  margin: 0 auto;
+}
+article.tweet footer .days-ago {
+  position: absolute;
+  left: 20px;
+}
+article.tweet footer .icons {
+  position: absolute;
+  right: 20px;
 }
