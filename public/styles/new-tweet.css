@@ -14,6 +14,7 @@
   margin: 8px 0;
   transition: width 0.4s ease-in-out;
   resize: none;
+  overflow: hidden;
 }
 .new-tweet textarea:focus {
   outline: none;
@@ -24,6 +25,51 @@
   background-color: #9200cc;
   color: #fff;
   border: none;
+  display: inline-block;
   text-align: left;
   text-transform: uppercase;
+}
+
+.counter {
+  display: inline-block;
+  text-align: right;
+}
+
+article.tweet-container {
+  position: relative;
+
+  text-align: center;
+  margin: 30px auto;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: rgba(252, 192, 34, 0.5);
+}
+
+article.tweet-container header {
+  margin: 0 auto;
+  position: relative;
+  height: 50px;
+}
+
+article.tweet-container header .user-img {
+  width: 5%;
+  position: absolute;
+  left: 20px;
+}
+article.tweet-container header .user-nam {
+  position: absolute;
+  left: 50px;
+}
+article.tweet-container header .alias {
+  position: absolute;
+  right: 20px;
+}
+
+article.tweet-container .tweet-body {
+  position: relative;
+  height: 50px;
+}
+
+article.tweet-container footer {
+  position: relative;
+  height: 50px;
 }
