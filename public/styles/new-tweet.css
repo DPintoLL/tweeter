@@ -48,7 +48,6 @@
 }
 
 span.counter {
-  /* display: inline-block; */
   text-align: right;
   position: absolute;
   top: 120px;
@@ -59,7 +58,6 @@ article.tweet-card {
   display: flex;
   flex-direction: column;
   height: 250px;
-
   text-align: center;
   margin: 30px auto;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
@@ -68,6 +66,11 @@ article.tweet-card {
 }
 article.tweet-card:hover {
   box-shadow: 5px 5px 15px 5px #fcc022;
+  transition: box-shadow 0.4s ease;
+}
+article.tweet-card {
+  box-shadow: none;
+  transition: box-shadow 0.4s ease;
 }
 
 article.tweet-card > * {
