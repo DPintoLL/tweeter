@@ -16,7 +16,6 @@
   font-family: "Bungee", sans-serif;
   font-size: 2em;
 }
-
 .ish {
   position: absolute;
   font-family: "Lacquer";
@@ -25,4 +24,44 @@
   left: 250px;
   color: #fcc022;
   font-size: 1.2em;
+}
+
+.motto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.motto .collapse {
+  position: absolute;
+  bottom: 15px;
+  color: red;
+  transition: bottom 0.4s ease;
+  animation-duration: 2s;
+  transform-origin: top;
+  display: flex;
+}
+.motto:hover,
+.collapse:hover {
+  animation-name: chevron-bounce;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes chevron-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(8px);
+  }
+  50% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
 }

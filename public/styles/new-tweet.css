@@ -86,7 +86,7 @@ article.tweet-card header > * {
   line-height: 83.3px;
 }
 article.tweet-card header .user-img {
-  left: 20px;
+  left: 0;
 }
 article.tweet-card header .user-name {
   left: 80px;
