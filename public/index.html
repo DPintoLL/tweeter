@@ -30,12 +30,19 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    ></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script defer type="text/javascript" src="/scripts/client.js"></script>
     <script
+      defer
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
@@ -74,7 +81,7 @@
     <main class="container">
       <!-- Compose New Tweet -->
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>Compose a Tweetish</h2>
         <div class="form-wrapper">
           <form id="submit-form" action="/tweets" method="POST">
             <textarea
