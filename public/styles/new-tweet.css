@@ -3,6 +3,7 @@
   width: 90%;
   height: 230px;
   margin: 0 auto;
+  display: none;
 }
 
 .form-wrapper {
@@ -25,7 +26,7 @@
   border-bottom: 5px solid #fcc022;
   text-align: center;
   background-color: transparent;
-  padding: 10px 20px;
+  padding: 21px 20px;
   margin: 8px 0;
   transition: width 0.4s ease-in-out;
   resize: none;
@@ -74,7 +75,7 @@ article.tweet-card {
   text-align: center;
   margin: 30px auto;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  background-color: rgba(237, 237, 237, 0.3);
+  background-color: rgba(237, 237, 237, 0.5);
   border: 5px solid #fcc022;
   word-wrap: break-word;
 }
@@ -140,4 +141,41 @@ article.tweet-card footer .days-ago {
 article.tweet-card footer .icons {
   position: absolute;
   right: 20px;
+}
+
+span .alias {
+  display: inline-block;
+}
+
+span .alias:hover {
+  display: block;
+}
+
+div.error-display {
+  position: relative;
+}
+
+#error-msg {
+  position: relative;
+  margin: 30px auto;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid red;
+  background-color: rgba(146, 0, 204, 0.85);
+  color: #fcc022;
+}
+
+.error-bold {
+  color: red;
+  font-weight: bold;
+}
+
+#error-close {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  cursor: pointer;
 }

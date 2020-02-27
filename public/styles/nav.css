@@ -27,25 +27,32 @@
   text-shadow: 2px 2px 5px #000;
 }
 
-.motto {
+div.motto {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.motto .collapse {
+
+.chevron {
+  justify-content: center;
+  width: 40px;
+}
+.motto:hover,
+.chevron:hover {
+  cursor: pointer;
+  animation-name: chevron-bounce;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.motto .chevron {
   position: absolute;
   bottom: 15px;
   color: red;
   animation-duration: 1.5s;
   transform-origin: top;
   display: flex;
-}
-.motto:hover,
-.collapse:hover {
-  animation-name: chevron-bounce;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
 }
 
 @keyframes chevron-bounce {

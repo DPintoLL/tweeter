@@ -56,10 +56,8 @@
         <div class="ish">ish</div>
       </div>
       <div class="motto">
-        <label for="chevron">
-          <p><span class="bold">Write</span> a new tweet</p>
-        </label>
-        <div name="chevron" class="collapse">
+        <p><span class="bold">Write</span> a new tweet</p>
+        <div name="chevron" class="chevron">
           <i class="fas fa-angle-double-down fa-lg"></i>
         </div>
       </div>
@@ -79,6 +77,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!--  -->
+      <!-- Error message pop up -->
+      <section id="error-msg" class="invisible">
+        <div class="error-display">
+          <span class="error-bold">D'OH!! </span>
+          <span
+            >Please write a tweetish up to 140 characters. Aight? #kthxbye</span
+          >
+          <button id="error-close">X</button>
+        </div>
+      </section>
+
       <!-- Compose New Tweet -->
       <section class="new-tweet">
         <h2>Compose a Tweetish</h2>
@@ -93,6 +103,11 @@
           </form>
         </div>
       </section>
+
+      <!-- Go Up Button -->
+      <div id="top" class="top-visible">
+        <i class="fas fa-angle-double-up fa-3x"></i>
+      </div>
 
       <!-- Displaying all Tweets -->
       <section id="tweets-container"></section>

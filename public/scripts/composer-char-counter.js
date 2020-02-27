@@ -10,6 +10,7 @@ $(document).ready(function() {
     let charCount = 140 - $tweetArea.val().length;
     $counter.text(charCount);
 
+    //TODO: EXPLAIN THESE CLASSES
     if (charCount < 0) {
       $counter.removeClass("counter-XY-pos");
       $counter.addClass("bad");
