@@ -7,7 +7,10 @@
 
 .form-wrapper {
   position: relative;
-  height: 150px;
+  height: 180px;
+}
+.new-tweet h2 {
+  margin: 30px 0 0 0;
 }
 .new-tweet form {
   height: 80%;
@@ -35,6 +38,7 @@
 
 .new-tweet input[type="submit"] {
   background-color: #9200cc;
+  height: 40px;
   color: #fff;
   border: none;
   display: inline-block;
@@ -47,11 +51,20 @@
   resize: none;
 }
 
+.counter-XY-pos {
+  right: 200px;
+  top: 126px;
+}
+.bad {
+  right: 191px;
+  top: 111px;
+  color: red;
+  font-size: 2em;
+}
+
 span.counter {
   text-align: right;
   position: absolute;
-  top: 120px;
-  right: 200px;
 }
 
 article.tweet-card {
@@ -63,6 +76,7 @@ article.tweet-card {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-color: rgba(237, 237, 237, 0.3);
   border: 5px solid #fcc022;
+  word-wrap: break-word;
 }
 article.tweet-card:hover {
   box-shadow: 5px 5px 15px 5px #fcc022;

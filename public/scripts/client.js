@@ -1,7 +1,10 @@
 //TODO: --------------------------------------------------------------
-//! DONE empty the tweet container and render the db again
+//TODO: Clear the textarea after tweet is submitted
 //TODO: Handle 'enter' and 'shift+enter' inside textarea
-//TODO:
+//DONE: IMPORTANT: Fix CharCounter
+//DONE: empty the tweet container and render the db again
+//DONE: Long Tweets should overflow to next line
+//DONE: Fixed counter XY positioning
 
 //* Function Definitions
 
@@ -79,8 +82,11 @@ $(() => {
   const loadTweets = function() {
     $.ajax("/tweets", { method: "GET" }).then(tweets => {
       console.log("Successfully retrieved tweets from GET/tweets ", tweets);
+
+      // Empties tweets container so that timestamps are properly refreshed
       $("#tweets-container").empty();
       renderTweets(tweets);
+
       //! OLD - Right now renders the single latest tweet back to be prepended
       // const newTweetToBeRendered = [];
       // newTweetToBeRendered.push(tweets[tweets.length - 1]);

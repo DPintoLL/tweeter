@@ -2,7 +2,7 @@ $(document).ready(function() {
   console.log("Linked");
   const $tweetArea = $(".new-tweet textarea");
 
-  $tweetArea.on("keydown", function() {
+  $tweetArea.on("keydown keyup", function() {
     let $counter = $(this)
       .next()
       .next();
@@ -11,9 +11,11 @@ $(document).ready(function() {
     $counter.text(charCount);
 
     if (charCount < 0) {
+      $counter.removeClass("counter-XY-pos");
       $counter.addClass("bad");
     } else {
       $counter.removeClass("bad");
+      $counter.addClass("counter-XY-pos");
     }
   });
 });
