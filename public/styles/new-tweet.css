@@ -25,13 +25,13 @@
 
 .new-tweet form.active {
   width: 80%;
+  /* transition: width 0.4s ease-in-out; */
 }
 
 .new-tweet textarea {
   display: inline-block;
   height: 100px;
   width: 100%;
-  /* width: 45%; */
   border: none;
   border-bottom: 5px solid #fcc022;
   text-align: center;

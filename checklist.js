@@ -2,6 +2,7 @@
 
 //! MAJOR: -----------------------------------------------------------
 //TODO: Improve responsiveness with @media queries
+//TODO: Fix the bug on the sliding animation
 //TODO: Organize the code inside the main listener (submission)
 
 //* MINOR: -----------------------------------------------------------

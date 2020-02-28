@@ -35,12 +35,14 @@ const createTweetElement = tweetData => {
 };
 
 // Scrolls the viewport smoothly to the top
-const smoothScrollUp = function() {
-  var position = document.body.scrollTop || document.documentElement.scrollTop;
-  if (position) {
-    window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
-    scrollAnimation = setTimeout("smoothScrollUp()", 5);
-  } else clearTimeout(scrollAnimation);
+const smoothScrollTop = function() {
+  if (
+    document.body.scrollTop !== 0 ||
+    document.documentElement.scrollTop !== 0
+  ) {
+    window.scrollBy(0, -50);
+    requestAnimationFrame(smoothScrollTop);
+  }
 };
 
 //* ON DOCUMENT READY --------------------------------------------------
@@ -103,21 +105,32 @@ $(() => {
       // Empties tweets container so that timestamps are properly refreshed
       $("#tweets-container").empty();
       renderTweets(tweets);
-
-      //! OLD - USED TO render the single latest tweet back to be prepended
-      // const newTweetToBeRendered = [];
-      // newTweetToBeRendered.push(tweets[tweets.length - 1]);
-      // renderTweets(newTweetToBeRendered);
     });
   };
 
   // Slide New Tweet box
   const newTweetSlider = function() {
     $("div.motto").click(() => {
-      $("section.new-tweet").slideToggle("fast");
-      $("#submit-form textarea").focus();
+      // check if el has class then focus
+      if ($("div.motto").hasClass("open")) {
+        $("div.motto").removeClass("open");
+      } else {
+        // add class which will not focus
+        $("#submit-form textarea").focus();
+        $("div.motto").addClass("open");
+      }
+      $("section.new-tweet").slideToggle("slow");
     });
   };
+
+  $("textarea").on("focus", () => {
+    const $form = $("textarea").parent("form");
+    $form.addClass("active");
+  });
+  $("textarea").on("blur", () => {
+    const $form = $("textarea").parent("form");
+    $form.removeClass("active");
+  });
 
   // Displays the Go Up button when user scrolls
   $(document).scroll(function() {
@@ -132,7 +145,7 @@ $(() => {
 
   // When user clicks the UP button page is scrolled up smoothly
   $("#top").click(() => {
-    setTimeout("smoothScrollUp()", 5);
+    smoothScrollTop();
     // The scroll to top button will fade out
     $("#top").addClass(".invisible");
   });
@@ -152,15 +165,6 @@ $(() => {
     }
   });
   //! -------------------------------------------------------------------------
-
-  $("textarea").on("focus", () => {
-    const $form = $("textarea").parent("form");
-    $form.addClass("active");
-  });
-  $("textarea").on("blur", () => {
-    const $form = $("textarea").parent("form");
-    $form.removeClass("active");
-  });
 
   // Initializes Web Page
   newTweetSlider();
