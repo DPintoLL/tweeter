@@ -1,12 +1,3 @@
-//TODO: --------------------------------------------------------------
-//TODO: Clear the textarea after tweet is submitted
-//TODO: Handle 'enter' and 'shift+enter' inside textarea
-//TODO: Fix code duplication on the scrollToTop function
-//DONE: IMPORTANT: Fix CharCounter
-//DONE: empty the tweet container and render the db again
-//DONE: Long Tweets should overflow to next line
-//DONE: Fixed counter XY positioning
-
 //* FUNCTION DEFINITIONS ----------------------------------------------
 
 // Escapes unsafe characters before displaying the tweets
@@ -52,7 +43,7 @@ $(() => {
     });
   };
 
-  // Selects the form to append listener
+  // Selects the form that will receive a listener
   const $newTweetForm = $("#submit-form");
 
   // Binds eventListener to the form. AJAX POST request adds new tweets to DB
@@ -62,23 +53,30 @@ $(() => {
     console.log("Button clicked, performing ajax call...");
 
     // Performs basic VALIDATION on textarea text-content
-    const $textArea = $("#submit-form textarea").val();
-    if ($textArea.length > 140 || $textArea === "" || $textArea === null) {
+    const $textArea = $("#submit-form textarea");
+    if (
+      $textArea.val().length > 140 ||
+      $textArea.val() === "" ||
+      $textArea.val() === null
+    ) {
       console.log("Bad request.");
-      // $("#error-msg").removeClass("invisible");
       $("#error-msg").fadeIn(".invisible");
-      // alert("Please write a Tweetish up to 140 characters.");
       return;
     }
+
     // AJAX request that adds new tweet to DB
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $newTweetForm.serialize()
     }).then(function() {
-      console.log("Successfully posted new tweet to /tweets");
+      // Resets the textarea and the char counter
+      $textArea.val("");
+      // Renders tweets to the page
       loadTweets();
     });
+    $("#submit-form > span.counter")[0].innerText = 140;
+    $textArea.blur();
   });
 
   // Listener that allows closing the error message
@@ -106,6 +104,7 @@ $(() => {
   const newTweetSlider = function() {
     $("div.motto").click(() => {
       $("section.new-tweet").slideToggle("fast");
+      $("#submit-form textarea").focus();
     });
   };
 
@@ -133,6 +132,23 @@ $(() => {
     $("#top").addClass(".invisible");
   });
 
+  //! POSITION THESE APPROPRIATELY (COMMENTS ARE DONE) -----------------------
+  // Prevents multiples submissions if enter key is pressed and held.
+  $("#submit-form textarea").keydown(event => {
+    if (event.keyCode === 13 && !event.shiftKey) {
+      event.preventDefault();
+    }
+  });
+  // Pressing enter will submit the form; at the same time let users do shift+enter if desirable. The input will still be escaped and serialized, so text won't be displayed with line breaks. That is the desired effect.
+  $("#submit-form textarea").keyup(event => {
+    if (event.keyCode === 13 && !event.shiftKey) {
+      $newTweetForm.submit();
+      $(this).blur();
+    }
+  });
+  //! -------------------------------------------------------------------------
+
+  // Initializes Web Page
   newTweetSlider();
   loadTweets();
 });
@@ -140,7 +156,7 @@ $(() => {
 function scrollToTop() {
   var position = document.body.scrollTop || document.documentElement.scrollTop;
   if (position) {
-    window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
+    window.scrollBy(0, -Math.max(1, Math.floor(position / 20)));
     scrollAnimation = setTimeout("scrollToTop()", 5);
   } else clearTimeout(scrollAnimation);
 }

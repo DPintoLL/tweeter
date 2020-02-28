@@ -2,7 +2,7 @@ $(document).ready(function() {
   console.log("Linked");
   const $tweetArea = $(".new-tweet textarea");
 
-  $tweetArea.on("keydown keyup", function() {
+  $tweetArea.on("input", function() {
     let $counter = $(this)
       .next()
       .next();
@@ -10,7 +10,7 @@ $(document).ready(function() {
     let charCount = 140 - $tweetArea.val().length;
     $counter.text(charCount);
 
-    //TODO: EXPLAIN THESE CLASSES
+    // These classes apply appropriate display behaviour to the counter (turn red and bigger if > 140 chars && keep them aligned)
     if (charCount < 0) {
       $counter.removeClass("counter-XY-pos");
       $counter.addClass("bad");

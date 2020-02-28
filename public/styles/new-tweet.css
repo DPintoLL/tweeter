@@ -26,7 +26,7 @@
   border-bottom: 5px solid #fcc022;
   text-align: center;
   background-color: transparent;
-  padding: 21px 20px;
+  padding: 20px 0;
   margin: 8px 0;
   transition: width 0.4s ease-in-out;
   resize: none;
@@ -37,19 +37,30 @@
   width: 80%;
 }
 
-.new-tweet input[type="submit"] {
+#submit-btn {
   background-color: #9200cc;
   height: 40px;
   color: #fff;
   border: none;
   display: inline-block;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   position: absolute;
   top: 120px;
   left: 150px;
-  transition: left 0.4s ease-in-out;
+  transition: all 0.3s ease 0s;
   resize: none;
+}
+
+#submit-btn:hover {
+  align: center;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+
+#submit-btn:focus {
+  background-color: rgba(146, 0, 204, 0.8);
 }
 
 .counter-XY-pos {
@@ -71,7 +82,7 @@ span.counter {
 article.tweet-card {
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: auto;
   text-align: center;
   margin: 30px auto;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
@@ -116,7 +127,7 @@ article.tweet-card header .alias {
 
 article.tweet-card .tweet-body {
   position: relative;
-  height: 83.3px;
+  height: auto;
   width: 95%;
   margin: 0 auto;
 }
@@ -171,7 +182,7 @@ div.error-display {
 }
 
 #error-close {
-  background-color: transparent;
+  background: none;
   color: #fff;
   border: none;
   position: absolute;
