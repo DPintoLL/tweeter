@@ -7,6 +7,7 @@ const escapeUnsafeChars = function(str) {
   return div.innerHTML;
 };
 
+// Creates a tweetish card to be added to the app
 const createTweetElement = tweetData => {
   const sanitizedText = escapeUnsafeChars(tweetData.content.text);
   // Using Moment library to handle date formatting
@@ -31,6 +32,15 @@ const createTweetElement = tweetData => {
   </article>`;
 
   return article;
+};
+
+// Scrolls the viewport smoothly to the top
+const smoothScrollUp = function() {
+  var position = document.body.scrollTop || document.documentElement.scrollTop;
+  if (position) {
+    window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
+    scrollAnimation = setTimeout("smoothScrollUp()", 5);
+  } else clearTimeout(scrollAnimation);
 };
 
 //* ON DOCUMENT READY --------------------------------------------------
@@ -70,8 +80,9 @@ $(() => {
       method: "POST",
       data: $newTweetForm.serialize()
     }).then(function() {
-      // Resets the textarea and the char counter
+      // Resets the textarea, the char counter; clear errorMsg if present
       $textArea.val("");
+      $("#error-msg").fadeOut(".invisible");
       // Renders tweets to the page
       loadTweets();
     });
@@ -119,15 +130,9 @@ $(() => {
     }
   });
 
-  // When user clicks the button scrolls to the top of the page
+  // When user clicks the UP button page is scrolled up smoothly
   $("#top").click(() => {
-    // $(document).scrollTop(0);
-    let position =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    if (position) {
-      //   window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
-      scrollAnimation = setTimeout("scrollToTop()", 5);
-    } else clearTimeout(scrollAnimation);
+    setTimeout("smoothScrollUp()", 5);
     // The scroll to top button will fade out
     $("#top").addClass(".invisible");
   });
@@ -148,15 +153,16 @@ $(() => {
   });
   //! -------------------------------------------------------------------------
 
+  $("textarea").on("focus", () => {
+    const $form = $("textarea").parent("form");
+    $form.addClass("active");
+  });
+  $("textarea").on("blur", () => {
+    const $form = $("textarea").parent("form");
+    $form.removeClass("active");
+  });
+
   // Initializes Web Page
   newTweetSlider();
   loadTweets();
 });
-
-function scrollToTop() {
-  var position = document.body.scrollTop || document.documentElement.scrollTop;
-  if (position) {
-    window.scrollBy(0, -Math.max(1, Math.floor(position / 20)));
-    scrollAnimation = setTimeout("scrollToTop()", 5);
-  } else clearTimeout(scrollAnimation);
-}

@@ -1,11 +1,6 @@
 //TODOs: -------------------------------------------------------------
 
 //! MAJOR: -----------------------------------------------------------
-
-//TODO: Reset the counter and ** DONE -> blur out after form submission
-//TODO: Capture event target that bubbles up from TWEET button or textarea and then blur so that those elements don't stay selected after a POST submission
-//TODO: Hide the error box after submission
-//TODO: Fix code duplication on the scrollToTop function
 //TODO: Improve responsiveness with @media queries
 //TODO: Organize the code inside the main listener (submission)
 
@@ -17,6 +12,10 @@
 //TODO: Sign up and modal
 
 //DONE ----------------------------------------------------------------
+//DONE Fix code duplication on the scrollToTop function
+//DONE: Hide the error box after submission - use setTimeout()
+//DONE: <- in a different way -> Capture event target that bubbles up from TWEET button or textarea and then blur so that those elements don't stay selected after a POST submission
+//DONE: Reset the counter and blur out after form submission
 //DONE: Focus on text area when open
 //DONE: button styling
 //DONE: Handle 'enter' and 'shift+enter' inside textarea

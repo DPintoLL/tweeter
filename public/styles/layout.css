@@ -55,6 +55,7 @@ main {
 
 .invisible {
   display: none;
+  /* animation-duration: 2s; */
 }
 
 #top:hover {

@@ -4,24 +4,34 @@
   height: 230px;
   margin: 0 auto;
   display: none;
+  transition: all 1s ease;
+  animation-duration: 1s;
 }
 
 .form-wrapper {
-  position: relative;
   height: 180px;
+  transition: width 0.4s ease-in-out;
 }
 .new-tweet h2 {
   margin: 30px 0 0 0;
 }
 .new-tweet form {
+  position: relative;
   height: 80%;
+  width: 45%;
   margin: auto;
+  transition: width 0.4s ease-in-out;
+}
+
+.new-tweet form.active {
+  width: 80%;
 }
 
 .new-tweet textarea {
   display: inline-block;
   height: 100px;
-  width: 45%;
+  width: 100%;
+  /* width: 45%; */
   border: none;
   border-bottom: 5px solid #fcc022;
   text-align: center;
@@ -34,7 +44,7 @@
 }
 .new-tweet textarea:focus {
   outline: none;
-  width: 80%;
+  /* width: 80%; */
 }
 
 #submit-btn {
@@ -47,7 +57,7 @@
   text-transform: uppercase;
   position: absolute;
   top: 120px;
-  left: 150px;
+  left: 0;
   transition: all 0.3s ease 0s;
   resize: none;
 }
@@ -63,20 +73,20 @@
   background-color: rgba(146, 0, 204, 0.8);
 }
 
+span.counter {
+  text-align: right;
+  position: absolute;
+}
 .counter-XY-pos {
-  right: 200px;
+  right: 0;
   top: 126px;
 }
+
 .bad {
   right: 191px;
   top: 111px;
   color: red;
   font-size: 2em;
-}
-
-span.counter {
-  text-align: right;
-  position: absolute;
 }
 
 article.tweet-card {
