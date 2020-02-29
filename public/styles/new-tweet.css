@@ -1,8 +1,8 @@
-.new-tweet {
+section.new-tweet {
   text-align: center;
-  width: 90%;
+  width: 100%;
   height: 230px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: none;
   transition: all 1s ease;
   animation-duration: 1s;
@@ -199,4 +199,8 @@ div.error-display {
   top: -2px;
   right: 0;
   cursor: pointer;
+}
+
+#tweet-container {
+  margin-top: 40px;
 }

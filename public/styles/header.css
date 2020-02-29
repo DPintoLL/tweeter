@@ -1,8 +1,9 @@
 header.avatar-wrapper {
-  margin-top: 120px;
+  /* margin: 160px 20px; */
   height: 400px;
-  width: 100%;
-
+  width: 30%;
+  min-width: 250px;
+  max-width: 400px;
   text-align: center;
 
   background-color: #a14ebf;
@@ -25,5 +26,3 @@ header img {
 .bold {
   font-size: 1.3em;
 }
-
-margin: 180px 60px 0 60px;

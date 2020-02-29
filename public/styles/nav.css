@@ -39,8 +39,7 @@ div.motto {
   justify-content: center;
   width: 40px;
 }
-.motto:hover .chevron,
-.chevron:hover {
+.motto:hover .chevron {
   cursor: pointer;
   animation-name: chevron-bounce;
   animation-timing-function: ease;
