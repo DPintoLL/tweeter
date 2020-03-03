@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  console.log("Linked");
   const $tweetArea = $(".new-tweet textarea");
 
+  // Listens for input being typed into textarea and updates counter
   $tweetArea.on("input", function() {
     let $counter = $(this)
       .next()

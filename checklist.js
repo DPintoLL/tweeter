@@ -1,19 +1,19 @@
 //TODOs: --------------------------------------------------------------------------
 
 //! MAJOR: -----------------------------------------------------------
-//TODO: Improve responsiveness with @media queries
-//TODO: Fix the bug on the sliding animation
-//TODO: Organize the code inside the main listener (submission)
-//TODO: Invert Layouts to be mobile first
 
 //* MINOR: -----------------------------------------------------------
+//TODO: Invert Layouts to be mobile first
 //TODO: Add appropriate error codes for empty tweets and >140 chars
-//TODO: Animate 'Tweet' button and counter at the same time as the textarea
-//TODO: Get the hit area correctly on the chevron and motto
-//TODO: Improve notion of the button being pressed
 //TODO: Sign up and modal
 
 //DONE ----------------------------------------------------------------
+////DONE: Improve notion of the button being pressed
+////DONE: Get the hit area correctly on the chevron and motto
+////DONE: Fix the bug on the New Tweet sliding animation
+////DONE: Improve responsiveness with @media queries
+////DONE: Organize the code inside the main listener (submission)
+////DONE: Animate 'Tweet' button and counter at the same time as the textarea
 ////DONE Fix code duplication on the scrollToTop function
 ////DONE: Hide the error box after submission - use setTimeout()
 ////DONE: <- in a different way -> Capture event target that bubbles up from TWEET button or textarea and then blur so that those elements don't stay selected after a POST submission

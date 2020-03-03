@@ -35,7 +35,6 @@ body {
 
 main.container {
   width: 80%;
-  /* margin: 120px 60px 0 20px; */
 }
 
 div.top-visible {
@@ -56,7 +55,6 @@ div.top-visible {
 
 .invisible {
   display: none;
-  /* animation-duration: 2s; */
 }
 
 div.top-visible:hover {
@@ -112,9 +110,6 @@ div.top-visible:hover {
     width: 100%;
     max-height: 250px;
     max-width: none;
-    /* max-width: 200px; */
-    /* background-color: black; */
-    /* margin: 120px 0 0 0; */
   }
   header img {
     margin: 0 auto;
@@ -126,7 +121,6 @@ div.top-visible:hover {
 
   main.container {
     width: 100%;
-    /* margin: 120px 60px 0 20px; */
   }
 }
 
@@ -134,18 +128,15 @@ div.top-visible:hover {
   body {
     flex-direction: column;
     align-items: center;
-    /* margin-top: 120px; */
   }
 
   header.avatar-wrapper {
     width: 100%;
     max-width: none;
-    /* margin: 120px 0 0 0; */
   }
 
   main.container {
     width: 80%;
-    /* margin: 120px 60px 0 20px; */
   }
 }
 
@@ -155,7 +146,6 @@ div.top-visible:hover {
   }
   main.container {
     width: 80%;
-    /* margin: 80px 60px 0 20px; */
     margin: -30px 60px 0 20px;
   }
 

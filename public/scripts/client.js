@@ -62,7 +62,6 @@ $(() => {
   $newTweetForm.submit(function(event) {
     // Prevents page reload behaviour
     event.preventDefault();
-    console.log("Button clicked, performing ajax call...");
 
     // Performs basic VALIDATION on textarea text-content
     const $textArea = $("#submit-form textarea");
@@ -95,8 +94,6 @@ $(() => {
   // Fetches tweets from the JSON DB through the GET/tweets endpoint
   const loadTweets = function() {
     $.ajax("/tweets", { method: "GET" }).then(tweets => {
-      console.log("Successfully retrieved tweets from GET/tweets ", tweets);
-
       // Empties tweets container so that timestamps are properly refreshed
       $("#tweets-container").empty();
       renderTweets(tweets);
