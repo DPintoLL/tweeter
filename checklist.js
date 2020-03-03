@@ -1,9 +1,10 @@
-//TODOs: -------------------------------------------------------------
+//TODOs: --------------------------------------------------------------------------
 
 //! MAJOR: -----------------------------------------------------------
 //TODO: Improve responsiveness with @media queries
 //TODO: Fix the bug on the sliding animation
 //TODO: Organize the code inside the main listener (submission)
+//TODO: Invert Layouts to be mobile first
 
 //* MINOR: -----------------------------------------------------------
 //TODO: Add appropriate error codes for empty tweets and >140 chars
@@ -13,19 +14,19 @@
 //TODO: Sign up and modal
 
 //DONE ----------------------------------------------------------------
-//DONE Fix code duplication on the scrollToTop function
-//DONE: Hide the error box after submission - use setTimeout()
-//DONE: <- in a different way -> Capture event target that bubbles up from TWEET button or textarea and then blur so that those elements don't stay selected after a POST submission
-//DONE: Reset the counter and blur out after form submission
-//DONE: Focus on text area when open
-//DONE: button styling
-//DONE: Handle 'enter' and 'shift+enter' inside textarea
-//DONE: Change the listener on the FORM SUBMISSION to .input
-//DONE: Clear the textarea after tweet is submitted
-//DONE: IMPORTANT: Fix CharCounter
-//DONE: empty the tweet container and render the db again
-//DONE: Long Tweets should overflow to next line
-//DONE: Fixed counter XY positioning
+////DONE Fix code duplication on the scrollToTop function
+////DONE: Hide the error box after submission - use setTimeout()
+////DONE: <- in a different way -> Capture event target that bubbles up from TWEET button or textarea and then blur so that those elements don't stay selected after a POST submission
+////DONE: Reset the counter and blur out after form submission
+////DONE: Focus on text area when open
+////DONE: button styling
+////DONE: Handle 'enter' and 'shift+enter' inside textarea
+////DONE: Change the listener on the FORM SUBMISSION to .input
+////DONE: Clear the textarea after tweet is submitted
+////DONE: IMPORTANT: Fix CharCounter
+////DONE: empty the tweet container and render the db again
+////DONE: Long Tweets should overflow to next line
+////DONE: Fixed counter XY positioning
 
 //* ALL CORE REQUIREMENTS ARE MET!
 //! Functional Requirements

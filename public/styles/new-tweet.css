@@ -8,6 +8,10 @@ section.new-tweet {
   animation-duration: 1s;
 }
 
+section.new-tweet.active {
+  transition: width 0.4s ease-in-out;
+}
+
 .form-wrapper {
   height: 180px;
   transition: width 0.4s ease-in-out;
@@ -25,7 +29,7 @@ section.new-tweet {
 
 .new-tweet form.active {
   width: 80%;
-  /* transition: width 0.4s ease-in-out; */
+  transition: width 0.4s ease-in-out;
 }
 
 .new-tweet textarea {

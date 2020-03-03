@@ -66,12 +66,7 @@ $(() => {
 
     // Performs basic VALIDATION on textarea text-content
     const $textArea = $("#submit-form textarea");
-    if (
-      $textArea.val().length > 140 ||
-      $textArea.val() === "" ||
-      $textArea.val() === null
-    ) {
-      console.log("Bad request.");
+    if ($textArea.val().length > 140 || !$textArea.val()) {
       $("#error-msg").fadeIn(".invisible");
       return;
     }
@@ -111,18 +106,13 @@ $(() => {
   // Slide New Tweet box
   const newTweetSlider = function() {
     $("div.motto").click(() => {
-      // check if el has class then focus
-      if ($("div.motto").hasClass("open")) {
-        $("div.motto").removeClass("open");
-      } else {
-        // add class which will not focus
-        $("#submit-form textarea").focus();
-        $("div.motto").addClass("open");
-      }
+      $("section.new-tweet").addClass("active");
       $("section.new-tweet").slideToggle("slow");
+      $("#submit-form textarea").focus();
     });
   };
 
+  // Toggles classes that perform animation on "Tweet" button and char counter
   $("textarea").on("focus", () => {
     const $form = $("textarea").parent("form");
     $form.addClass("active");
@@ -150,7 +140,6 @@ $(() => {
     $("#top").addClass(".invisible");
   });
 
-  //! POSITION THESE APPROPRIATELY (COMMENTS ARE DONE) -----------------------
   // Prevents multiples submissions if enter key is pressed and held.
   $("#submit-form textarea").keydown(event => {
     if (event.keyCode === 13 && !event.shiftKey) {
@@ -164,7 +153,6 @@ $(() => {
       $(this).blur();
     }
   });
-  //! -------------------------------------------------------------------------
 
   // Initializes Web Page
   newTweetSlider();

@@ -5,7 +5,6 @@ header.avatar-wrapper {
   min-width: 250px;
   max-width: 400px;
   text-align: center;
-
   background-color: #a14ebf;
   background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
 }
@@ -14,6 +13,7 @@ header img {
   margin: 30px auto 0 auto;
   position: relative;
 }
+
 .avatar-name {
   width: 100%;
   display: flex;

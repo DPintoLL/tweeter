@@ -92,14 +92,49 @@ div.top-visible:hover {
   }
 }
 
-@media (max-width: 420px) {
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 767px) {
   body {
     flex-direction: column;
     align-items: center;
-    margin-top: 120px;
+  }
+  .logo {
+    font-size: 1.4em;
+  }
+  .ish {
+    font-size: 1.4em;
+    top: 16px;
+    left: 185px;
+  }
+  div.motto {
+    font-size: 0.9em;
+  }
+  header.avatar-wrapper {
+    width: 100%;
+    max-height: 250px;
+    max-width: none;
+    /* max-width: 200px; */
+    /* background-color: black; */
+    /* margin: 120px 0 0 0; */
+  }
+  header img {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+  .avatar-name {
+    margin: -30px auto;
+  }
+
+  main.container {
+    width: 100%;
+    /* margin: 120px 60px 0 20px; */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 120px; */
   }
 
   header.avatar-wrapper {
@@ -115,12 +150,16 @@ div.top-visible:hover {
 }
 
 @media (min-width: 1024px) {
+  body {
+    margin-top: 180px;
+  }
   main.container {
     width: 80%;
-    margin: 80px 60px 0 20px;
+    /* margin: 80px 60px 0 20px; */
+    margin: -30px 60px 0 20px;
   }
 
   header.avatar-wrapper {
-    margin: 80px 40px;
+    margin: 0 40px;
   }
 }
